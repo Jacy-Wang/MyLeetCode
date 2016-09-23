@@ -1,0 +1,14 @@
+class Solution(object):
+    def lengthOfLIS(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if len(nums) == 0:
+            return 0
+        dp = [1 for _ in xrange(len(nums))]
+        for i in xrange(0, len(nums) - 1):
+            for j in xrange(i + 1, len(nums)):
+                if nums[i] < nums[j]:
+                    dp[j] = max(dp[j], dp[i] + 1)
+        return max(dp)
