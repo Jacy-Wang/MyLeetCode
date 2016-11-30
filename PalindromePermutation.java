@@ -10,7 +10,7 @@ public PalindromePermutation {
         }
         int oddNum = 0;
         for (Character c : map.keySet()) {
-            if (map.get(c) & 1 == 1)
+            if ((map.get(c) & 1) == 1)
                 oddNum++;
         }
         return oddNum <= 1;
